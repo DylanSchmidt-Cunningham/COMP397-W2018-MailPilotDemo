@@ -26,21 +26,40 @@ var scenes;
             this._ocean = new objects.Ocean(this.assetManager);
             this._plane = new objects.Plane(this.assetManager);
             this._island = new objects.Island(this.assetManager);
+            // instantiate the cloud array
+            this._clouds = new Array();
+            this._cloudNum = 3;
+            // loop and add each cloud to the array
+            for (var count = 0; count < this._cloudNum; count++) {
+                this._clouds[count] = new objects.Cloud(this.assetManager);
+            }
             this.Main();
         };
         PlayScene.prototype.Update = function () {
             this._ocean.Update();
             this._plane.Update();
             this._island.Update();
+            this._clouds.forEach(function (cloud) {
+                cloud.Update();
+            });
         };
         // This is where the fun happens
         PlayScene.prototype.Main = function () {
+            var _this = this;
             // add the ocean to the scene
             this.addChild(this._ocean);
             // add the island to the scene
             this.addChild(this._island);
             // add the plane to the scene
             this.addChild(this._plane);
+            // add clouds to the scene
+            // for (let count = 0; count < this._cloudNum; count++) {
+            //     this.addChild(this._clouds[count]);
+            // }
+            // or
+            this._clouds.forEach(function (cloud) {
+                _this.addChild(cloud);
+            });
         };
         return PlayScene;
     }(objects.Scene));
