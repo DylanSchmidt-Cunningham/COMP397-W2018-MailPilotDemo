@@ -5,7 +5,10 @@
 /// <reference path="../../Scripts/config/scene.ts"/>
 /// <reference path="../../Scripts/objects/scene.ts"/>
 
+/// <reference path="../../Scripts/objects/gameobject.ts"/>
+
 /// <reference path="../../Scripts/objects/ocean.ts"/>
+/// <reference path="../../Scripts/objects/plane.ts"/>
 
 /// <reference path="../../Scripts/scenes/over.ts"/>
 /// <reference path="../../Scripts/scenes/play.ts"/>

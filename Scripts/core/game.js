@@ -34,6 +34,7 @@
         stage.enableMouseOver(20); // turn this on for buttons, very expensive
         createjs.Ticker.framerate = 60; // 60 FPS
         createjs.Ticker.on("tick", Update);
+        objects.Game.stage = stage;
         objects.Game.currentScene = config.Scene.START;
         currentState = config.Scene.START;
         Main();
