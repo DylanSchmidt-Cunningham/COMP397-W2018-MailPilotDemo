@@ -14,9 +14,11 @@ var managers;
                     switch (object2.name) {
                         case "island":
                             createjs.Sound.play("yay");
+                            objects.Game.scoreBoard.Score += 100;
                             break;
                         case "cloud":
                             createjs.Sound.play("thunder");
+                            objects.Game.scoreBoard.Lives--;
                             break;
                     }
                 }
