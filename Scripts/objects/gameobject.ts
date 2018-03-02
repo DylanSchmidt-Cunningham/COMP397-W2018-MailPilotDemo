@@ -9,6 +9,7 @@ module objects {
         public height:number;
         public halfwidth:number;
         public halfheight:number;
+        public isColliding: boolean;
 
         // constructors
         constructor(assetManager:createjs.LoadQueue, imageString:string) {
@@ -25,6 +26,7 @@ module objects {
             this.halfheight = this.height * 0.5;
             this.regX = this.halfwidth;
             this.regY = this.halfheight;
+            this.isColliding = false;
         }
 
         // public methods

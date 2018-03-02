@@ -35,12 +35,18 @@ var scenes;
             }
             this.Main();
         };
+        // triggered every frame
         PlayScene.prototype.Update = function () {
+            var _this = this;
             this._ocean.Update();
             this._plane.Update();
             this._island.Update();
+            //check collision between plane and island
+            managers.Collision.Check(this._plane, this._island);
             this._clouds.forEach(function (cloud) {
                 cloud.Update();
+                // check collision beyween plane and current island
+                managers.Collision.Check(_this._plane, cloud);
             });
         };
         // This is where the fun happens
